@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imran Khan — GenAI Developer &amp; AI Solution Engineer</title>
+<meta name="description" content="Imran Khan is a problem-first GenAI developer building RAG systems, prompt-evaluation tools, and applied AI products. BCA graduate, self-taught, ships fast.">
+<meta name="theme-color" content="#FFFFFF">
+
+<meta property="og:title" content="Imran Khan — GenAI Developer & AI Solution Engineer">
+<meta property="og:description" content="Problem-first AI engineer. RAG systems, prompt engineering, and applied GenAI products, built and shipped independently.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- SINO Special CSS — 3 equal buttons -->
+<style>
+  .project-footer-sino .link-btn {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .project-footer-sino .link-btn:last-child {
+    border-right: none;
+  }
+</style>
+
+</head>
+<body>
+
+<!-- ============ ICON SPRITE ============ -->
+<svg style="display:none">
+  <defs>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.1 2.3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 5H4a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4M17 5h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-chevron-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">
+      <span class="nav-avatar mono">IK</span>
+      <span class="nav-name">Imran Khan</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://github.com/Rev-ImranKhan" class="nav-social" target="_blank" rel="noopener">GitHub</a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu">
+        <svg class="icon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="hero">
+  <div class="container">
+    <div class="hero-card reveal">
+      <div class="hero-copy">
+        <span class="role-badge mono">PROBLEM-FIRST ENGINEER</span>
+        <p class="eyebrow-line">Hey, I'm Imran Khan <span class="wave">👋</span></p>
+        <h1 class="hero-title">
+          <span class="text-accent">GenAI</span> Developer &amp;<br>
+          AI Solution Engineer
+        </h1>
+        <p class="hero-subtitle">
+  Self-taught product engineer who spent two years building <strong>11 live AI startup models</strong> 
+  from the ground up — real tools for agriculture, education, legal access, and hiring. Designed to
+   <strong>serve</strong>, not just showcase.
+</p>
+        <div class="hero-cta">
+  <a href="#projects" class="btn btn-primary">View Projects</a>
+  <a href="resume.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download Resume</a>
+  
+  <!-- Availability Badge - Force new line with full width -->
+  <div style="display: flex; justify-content: center; margin-top: 20px; width: 100%; flex-shrink: 0;">
+    <span class="availability-badge">
+      📌 Available for full-time roles — GenAI Developer · AI Solution Engineer
+    </span>
+  </div>
+</div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit-frame">
+          <div class="orbit-center"><span class="mono">IK</span></div>
+          <div class="orbit-ring">
+            <div class="orbit-pos orbit-pos-1"><div class="orbit-chip orbit-chip-logo"><img src="https://skillicons.dev/icons?i=py&theme=light" alt="Python" loading="lazy"></div></div>
+            <div class="orbit-pos orbit-pos-2"><div class="orbit-chip orbit-chip-logo"><img src="https://skillicons.dev/icons?i=flask&theme=light" alt="Flask" loading="lazy"></div></div>
+            <div class="orbit-pos orbit-pos-3"><div class="orbit-chip orbit-chip-logo"><img src="https://skillicons.dev/icons?i=js&theme=light" alt="JavaScript" loading="lazy"></div></div>
+            <div class="orbit-pos orbit-pos-4"><div class="orbit-chip orbit-chip-logo"><img src="https://skillicons.dev/icons?i=react&theme=light" alt="React" loading="lazy"></div></div>
+            <div class="orbit-pos orbit-pos-5"><div class="orbit-chip orbit-chip-logo"><img src="https://skillicons.dev/icons?i=flutter&theme=light" alt="Flutter" loading="lazy"></div></div>
+            <div class="orbit-pos orbit-pos-6"><div class="orbit-chip orbit-chip-logo"><img src="https://skillicons.dev/icons?i=git&theme=light" alt="Git" loading="lazy"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+  <p class="eyebrow mono">ABOUT ME</p>
+  <h2 class="section-title">Built without a safety net.</h2>
+  
+  <p class="body-lg">
+  I'm a self-taught engineer who chose a different path. 
+  <strong>No internships. No mentors. No one telling me what to build.</strong> 
+  Just a laptop, an internet connection, and a relentless drive to solve real problems 
+  using AI — completely from the ground up. 
+  <strong>I thrive in autonomy, but I know the best products are built through deep collaboration with designers, PMs, and fellow engineers.</strong>
+</p>
+  
+  <p class="body-md">
+    For the last <strong>two years</strong>, I've been fully self-directed — 
+    designing, building, and shipping production-ready GenAI applications. 
+    I didn't wait for a job to teach me; I taught myself by shipping 
+    <strong>30+ live projects</strong> across agriculture, education, legal access, 
+    and hiring.
+  </p>
+  
+  <p class="body-md">
+    I don't build to fill a resume — I build because I see gaps that need fixing. 
+    <strong>Farmers</strong> need crop advice (<em>FasalGuru</em>). 
+    <strong>Students</strong> need quality tutoring (<em>ShikshaBot</em>). 
+    <strong>Citizens</strong> need legal aid and scheme discovery (<em>Nyay AI</em>, 
+    <em>Sarkari Yojana</em>). <strong>Recruiters</strong> need better screening 
+    (<em>AI Resume Screener</em>). I identified these problems and built working 
+    solutions — end to end.
+  </p>
+  
+  <p class="body-md">
+    I also founded <strong>HireVix</strong> — a remote-work hiring platform. 
+    While the business didn't scale, it gave me something no course ever could: 
+    <strong>real-world founder experience</strong>. I learned the brutal gap between 
+    "code that works" and "a product people actually pay for." That experience 
+    fundamentally changed how I build — I now think in terms of <strong>time-to-market, 
+    user impact, and business viability</strong>, not just tech features.
+  </p>
+
+  <!-- 🔥 YEH NAYA PARAGRAPH HAI (Aapki wali baat) 🔥 -->
+  <p class="body-md" style="margin-top: 24px; padding: 20px 24px; background: rgba(124,58,237,0.04); border-radius: 12px; border-left: 3px solid var(--accent);">
+    <strong>I've had an entrepreneur's mindset since childhood</strong> — I don't wait for instructions; 
+    I find the gaps, own the outcome, and get it done. A task isn't complete until it's actually 
+    solving the problem it was meant to solve. 
+    <strong>I don't quit until it's finished.</strong> 
+    That resilience brought me here — 30+ projects, no safety net, and a track record of shipping 
+    against every odd. I'm looking for a role where I can bring that same founder-level grit, 
+    ownership, and execution speed to solve hard AI problems for a company I genuinely believe in.
+  </p>
+  <!-- 🔥 YAHAN TAK 🔥 -->
+
+<!-- 🔥 STARTUP MINDSET — NOT JUST PROJECTS -->
+<p class="body-md" style="margin-top: 24px; padding: 20px 24px; background: rgba(124,58,237,0.05); border-radius: 12px; border-left: 3px solid var(--accent);">
+  <strong>🚀 A portfolio of product experiments, not just projects.</strong> 
+  Here's the truth — every single one of these 11 projects was built with the <strong>same founder mindset</strong> 
+  that drove me to start HireVix. I didn't build them to impress recruiters or fill a GitHub grid. 
+  I built them because I saw a gap, formulated a hypothesis, scoped an MVP, launched it, and 
+  observed how real users interacted with it. 
+  <br><br>
+  Some of them are raw. Some need polish. But every single one is a <strong>live product experiment</strong> — 
+  designed for real people, deployed end-to-end, and built with the belief that 
+  <strong>"If this gains traction, it could become a business."</strong> 
+  This isn't a project showcase — this is my <strong>entrepreneurial journey</strong> in 11 acts.
+</p>
+
+  <!-- PHILOSOPHY BOX -->
+  <div class="philosophy-box" style="background: linear-gradient(135deg, rgba(124,58,237,0.06), rgba(192,38,211,0.06)); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 28px 32px; margin: 32px 0 20px;">
+    <p style="font-size: 17px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">🧠 My Philosophy</p>
+    <p style="font-size: 15.5px; color: var(--text-secondary); line-height: 1.7; font-style: italic;">
+      "I don't just use AI — I challenge it. When the model hits a wall, I find the workaround. 
+      When it hesitates, I push it further. Solving those stuck moments is what drives me. 
+      This isn't just a job; it's my element. If I'm not building, tinkering, or interacting 
+      with AI on my laptop, I feel disconnected. I build because I can't imagine not building."
+    </p>
+  </div>
+
+  <!-- PRINCIPLES -->
+  <div class="principles">
+    <div class="principle-item">
+      <span class="principle-mark mono">→</span>
+      <span><strong>Problem-first, not tech-first.</strong> I start with who has this problem and why it hurts, not which stack looks impressive.</span>
+    </div>
+    <div class="principle-item">
+      <span class="principle-mark mono">→</span>
+      <span><strong>Founder mentality, engineer's execution.</strong> HireVix failed — it changed how I judge every project since.</span>
+    </div>
+    <div class="principle-item">
+      <span class="principle-mark mono">→</span>
+      <span><strong>Ship, then refine.</strong> A working v1 solving 80% of the problem beats a perfect plan that never ships.</span>
+    </div>
+    <div class="principle-item">
+      <span class="principle-mark mono">→</span>
+      <span><strong>Outcome over ego.</strong> It doesn't need to be my idea — it needs to work.</span>
+    </div>
+  </div>
+</div>
+
+      <div class="about-stats reveal">
+        <div class="stat-card"><span class="stat-number mono">30+</span><span class="stat-label">AI applications built independently</span></div>
+        <div class="stat-card"><span class="stat-number mono">2</span><span class="stat-label">years of self-directed shipping</span></div>
+        <div class="stat-card"><span class="stat-number mono">1</span><span class="stat-label">startup founded, built, and understood in failure</span></div>
+        <div class="stat-card stat-card-accent"><span class="stat-number mono">0</span><span class="stat-label">tickets — every project was self-assigned</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="section section-alt" id="skills">
+  <div class="container">
+    <p class="eyebrow mono center">TECHNICAL SKILLS</p>
+    <h2 class="section-title center">Tools I reach for</h2>
+    <p class="section-subtitle center">Every architectural decision is mine — AI-assisted tools help me move fast, not think for me.</p>
+
+    <div class="skills-groups">
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">LANGUAGES</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=py&theme=light" alt="Python" loading="lazy"></span><span class="skill-name">Python</span></div>
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=js&theme=light" alt="JavaScript" loading="lazy"></span><span class="skill-name">JavaScript (ES6+)</span></div>
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=dart&theme=light" alt="Dart" loading="lazy"></span><span class="skill-name">Dart</span></div>
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=html&theme=light" alt="HTML" loading="lazy"></span><span class="skill-name">HTML5</span></div>
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=css&theme=light" alt="CSS" loading="lazy"></span><span class="skill-name">CSS3</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">SQL</span><span class="skill-name">SQL</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">BACKEND FRAMEWORKS</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=flask&theme=light" alt="Flask" loading="lazy"></span><span class="skill-name">Flask</span></div>
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=fastapi&theme=light" alt="FastAPI" loading="lazy"></span><span class="skill-name">FastAPI</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">UV</span><span class="skill-name">Uvicorn</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">LC</span><span class="skill-name">LangChain</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">L-G</span><span class="skill-name">LangChain-Groq</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">LG</span><span class="skill-name">LangGraph</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">WZ</span><span class="skill-name">Werkzeug</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">AI / LLM STACK</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge mono">✦</span><span class="skill-name">Gemini API (Flash)</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">GE</span><span class="skill-name">Gemini Embeddings</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">GRQ</span><span class="skill-name">Groq API (Llama 3.3)</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">DB</span><span class="skill-name">ChromaDB</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">⚖</span><span class="skill-name">LLM-as-a-Judge</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">RAG</span><span class="skill-name">RAG</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">🎙</span><span class="skill-name">OpenAI Whisper</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">PE</span><span class="skill-name">Prompt Engineering</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">🤖</span><span class="skill-name">Agentic AI / Multi-Agent</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">G-SDK</span><span class="skill-name">google-genai SDK</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">TV</span><span class="skill-name">Tavily API (Web Search)</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">FRONTEND</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=react&theme=light" alt="React" loading="lazy"></span><span class="skill-name">React (CDN/UMD)</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">BS</span><span class="skill-name">Babel Standalone</span></div>
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=flutter&theme=light" alt="Flutter" loading="lazy"></span><span class="skill-name">Flutter</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">📊</span><span class="skill-name">Chart.js</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">📈</span><span class="skill-name">Plotly</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">DATABASE</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=sqlite&theme=light" alt="SQLite" loading="lazy"></span><span class="skill-name">SQLite</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">DB</span><span class="skill-name">ChromaDB (Vector)</span></div>
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=supabase&theme=light" alt="Supabase" loading="lazy"></span><span class="skill-name">Supabase (PostgreSQL)</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">ORM</span><span class="skill-name">SQLAlchemy</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">VOICE / MEDIA</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge mono">🎙</span><span class="skill-name">Web Speech API</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">TTS</span><span class="skill-name">gTTS</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">DOCUMENT / PDF</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge mono">PDF</span><span class="skill-name">ReportLab</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">PDF</span><span class="skill-name">PyPDF / pdfplumber</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">WEB SCRAPING</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge mono">🕸️</span><span class="skill-name">BeautifulSoup4</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">REAL-TIME COMM.</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge mono">SSE</span><span class="skill-name">Server-Sent Events</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">PWA</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge mono">📱</span><span class="skill-name">Web App Manifest</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">PAYMENTS &amp; AUTH</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge mono">₹</span><span class="skill-name">Razorpay</span></div>
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=gmail&theme=light" alt="Gmail" loading="lazy"></span><span class="skill-name">Gmail SMTP OTP</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">🔐</span><span class="skill-name">Flask-Login</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">🔑</span><span class="skill-name">Flask-Bcrypt</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">JWT</span><span class="skill-name">JWT (python-jose)</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">📧</span><span class="skill-name">Flask-Mail</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">🔥</span><span class="skill-name">Firebase Auth</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">🔥</span><span class="skill-name">Firebase Admin SDK</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">DATA &amp; ANALYSIS</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge mono">🐼</span><span class="skill-name">Pandas</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">🔢</span><span class="skill-name">NumPy</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">NETWORKING / HTTP</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge mono">🌐</span><span class="skill-name">HTTPX</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">📨</span><span class="skill-name">Requests</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">⛅</span><span class="skill-name">Open-Meteo API</span></div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <h3 class="skill-group-title mono">DEPLOYMENT &amp; TOOLS</h3>
+        <div class="skill-tiles">
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=git&theme=light" alt="Git" loading="lazy"></span><span class="skill-name">Git</span></div>
+          <div class="skill-tile"><span class="skill-badge skill-badge-logo"><img src="https://skillicons.dev/icons?i=github&theme=light" alt="GitHub" loading="lazy"></span><span class="skill-name">GitHub / Pages</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">📦</span><span class="skill-name">Render</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">▲</span><span class="skill-name">Vercel</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">📊</span><span class="skill-name">Streamlit</span></div>
+          <div class="skill-tile"><span class="skill-badge mono">🚀</span><span class="skill-name">Gunicorn</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="section" id="projects">
+  <div class="container">
+    <p class="eyebrow mono center">SELECTED WORK</p>
+    <h2 class="section-title center">Problems I decided to solve</h2>
+    <p class="section-subtitle center">Featuring 11 of 30+ projects on GitHub</p>
+
+    <div class="projects-grid">
+
+      <!-- 1. SINO -->
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-1"><span class="thumb-glyph mono">SIN</span></div>
+        <div class="project-body">
+          <h3 class="project-title">SINO</h3>
+          <p class="project-desc">Multi-agent AI platform — sign in and talk to your agent team. Real-time conversational AI with agent orchestration.</p>
+          <div class="tech-tags">
+            <span class="tag mono">React</span><span class="tag mono">Agentic AI</span><span class="tag mono">SSE</span>
+          </div>
+          <div class="render-wake" style="font-size: 11px; color: #9CA3AF; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; text-align: center;">⚡ Free tier hosting — first load may take 30–60s to wake up</div>
+        </div>
+        <div class="project-footer project-footer-sino">
+          <a href="https://github.com/Rev-ImranKhan/sino-frontend" class="link-btn">🔹 Frontend <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://github.com/Rev-ImranKhan/sino-backend" class="link-btn">🔸 Backend <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://sino-frontend.vercel.app" class="link-btn">Live Demo <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <!-- 2. Nyay AI -->
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-2"><span class="thumb-glyph mono">NYA</span></div>
+        <div class="project-body">
+          <h3 class="project-title">Nyay AI</h3>
+          <p class="project-desc">Multilingual AI legal assistant for India — supports 9 Indian languages, generates FIR drafts, PDF export, voice input/output.</p>
+          <div class="tech-tags">
+            <span class="tag mono">FastAPI</span><span class="tag mono">React</span><span class="tag mono">Groq</span>
+          </div>
+          <div class="render-wake" style="font-size: 11px; color: #9CA3AF; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; text-align: center;">⚡ Free tier hosting — first load may take 30–60s to wake up</div>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Rev-ImranKhan/Nyay-ai" class="link-btn">Code <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://nyay-ai-two.vercel.app" class="link-btn">Live Demo <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <!-- 3. FasalGuru -->
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-3"><span class="thumb-glyph mono">FAS</span></div>
+        <div class="project-body">
+          <h3 class="project-title">FasalGuru</h3>
+          <p class="project-desc">AI-powered crop disease detection — farmers upload plant images, Gemini Vision identifies diseases and suggests remedies in Hinglish.</p>
+          <div class="tech-tags">
+            <span class="tag mono">Flask</span><span class="tag mono">Gemini Vision</span><span class="tag mono">Hinglish</span>
+          </div>
+          <div class="render-wake" style="font-size: 11px; color: #9CA3AF; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; text-align: center;">⚡ Free tier hosting — first load may take 30–60s to wake up</div>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Rev-ImranKhan/FasalGuru" class="link-btn">Code <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://fasalguru-vgs3.onrender.com" class="link-btn">Live Demo <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <!-- 4. Kisan Daily Briefing Agent -->
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-4"><span class="thumb-glyph mono">BRF</span></div>
+        <div class="project-body">
+          <h3 class="project-title">Kisan Daily Briefing Agent</h3>
+          <p class="project-desc">Agentic AI daily farming briefing — real-time weather (Open-Meteo) + AI insights via SSE streaming.</p>
+          <div class="tech-tags">
+            <span class="tag mono">LangChain</span><span class="tag mono">Groq</span><span class="tag mono">Open-Meteo</span><span class="tag mono">SSE</span>
+          </div>
+          <div class="render-wake" style="font-size: 11px; color: #9CA3AF; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; text-align: center;">⚡ Free tier hosting — first load may take 30–60s to wake up</div>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Rev-ImranKhan/Kisan-Daily-Briefing-Agent" class="link-btn">Code <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://kisan-daily-briefing-agent.onrender.com" class="link-btn">Live Demo <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <!-- 5. Hallucination Catcher -->
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-5"><span class="thumb-glyph mono">HAL</span></div>
+        <div class="project-body">
+          <h3 class="project-title">Hallucination Catcher</h3>
+          <p class="project-desc">RAG evaluation and hallucination detection dashboard — analyzes AI response accuracy with ChromaDB retrieval and Gemini-based scoring.</p>
+          <div class="tech-tags">
+            <span class="tag mono">ChromaDB</span><span class="tag mono">Gemini</span><span class="tag mono">LLM-as-Judge</span><span class="tag mono">Chart.js</span>
+          </div>
+          <div class="render-wake" style="font-size: 11px; color: #9CA3AF; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; text-align: center;">⚡ Free tier hosting — first load may take 30–60s to wake up</div>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Rev-ImranKhan/Hallucination-Catcher" class="link-btn">Code <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://hallucination-catcher.onrender.com" class="link-btn">Live Demo <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <!-- 6. ShikshaBot -->
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-6"><span class="thumb-glyph mono">SHI</span></div>
+        <div class="project-body">
+          <h3 class="project-title">ShikshaBot</h3>
+          <p class="project-desc">AI-powered NCERT tutor for Class 6–12 students — answers curriculum-based questions using Gemini/Groq LLM.</p>
+          <div class="tech-tags">
+            <span class="tag mono">Flask</span><span class="tag mono">SQLite</span><span class="tag mono">Gemini</span><span class="tag mono">Groq</span>
+          </div>
+          <div class="render-wake" style="font-size: 11px; color: #9CA3AF; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; text-align: center;">⚡ Free tier hosting — first load may take 30–60s to wake up</div>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Rev-ImranKhan/ShikshaBot" class="link-btn">Code <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://shikshabot.onrender.com" class="link-btn">Live Demo <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <!-- 7. Ek Sawal, 4 Experts -->
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-7"><span class="thumb-glyph mono">4EX</span></div>
+        <div class="project-body">
+          <h3 class="project-title">Ek Sawal, 4 Experts</h3>
+          <p class="project-desc">Single question analyzed by 4 distinct AI expert personas — demonstrates advanced prompt design and multi-perspective reasoning.</p>
+          <div class="tech-tags">
+            <span class="tag mono">Gemini</span><span class="tag mono">Prompt Engineering</span><span class="tag mono">Flask</span>
+          </div>
+          <div class="render-wake" style="font-size: 11px; color: #9CA3AF; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; text-align: center;">⚡ Free tier hosting — first load may take 30–60s to wake up</div>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Rev-ImranKhan/Ek-Sawal-4-Experts" class="link-btn">Code <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://ek-sawal-4-experts.onrender.com" class="link-btn">Live Demo <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <!-- 8. Sarkari Yojana Finder -->
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-8"><span class="thumb-glyph mono">YOJ</span></div>
+        <div class="project-body">
+          <h3 class="project-title">Sarkari Yojana Finder</h3>
+          <p class="project-desc">RAG-powered chatbot for discovering Indian government welfare schemes — semantic search using ChromaDB and Gemini AI.</p>
+          <div class="tech-tags">
+            <span class="tag mono">ChromaDB</span><span class="tag mono">RAG</span><span class="tag mono">Gemini</span>
+          </div>
+          <div class="render-wake" style="font-size: 11px; color: #9CA3AF; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; text-align: center;">⚡ Free tier hosting — first load may take 30–60s to wake up</div>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Rev-ImranKhan/Sarkari-Yojana-Finder" class="link-btn">Code <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://sarkari-yojana-finder.onrender.com" class="link-btn">Live Demo <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <!-- 9. KisanBazaar -->
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-9"><span class="thumb-glyph mono">KIS</span></div>
+        <div class="project-body">
+          <h3 class="project-title">KisanBazaar</h3>
+          <p class="project-desc">Direct farmer-to-buyer marketplace — farmers list and sell produce directly, cutting out middlemen.</p>
+          <div class="tech-tags">
+            <span class="tag mono">Flask</span><span class="tag mono">SQLite</span><span class="tag mono">OTP</span>
+          </div>
+          <div class="render-wake" style="font-size: 11px; color: #9CA3AF; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; text-align: center;">⚡ Free tier hosting — first load may take 30–60s to wake up</div>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Rev-ImranKhan/KisanBazaar" class="link-btn">Code <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://kisanbazaar-rgnx.onrender.com" class="link-btn">Live Demo <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <!-- 10. AI Resume Screener -->
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-10"><span class="thumb-glyph mono">RES</span></div>
+        <div class="project-body">
+          <h3 class="project-title">AI Resume Screener</h3>
+          <p class="project-desc">Matches resumes against job descriptions — provides match score, strengths, weaknesses, and hiring recommendations.</p>
+          <div class="tech-tags">
+            <span class="tag mono">Gemini AI</span><span class="tag mono">Flask</span>
+          </div>
+          <div class="render-wake" style="font-size: 11px; color: #9CA3AF; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; text-align: center;">⚡ Free tier hosting — first load may take 30–60s to wake up</div>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Rev-ImranKhan/AI-Resume-Screener" class="link-btn">Code <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://ai-resume-screener-ay8u.onrender.com" class="link-btn">Live Demo <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <!-- 11. Stock Sentiment Analyzer -->
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-11"><span class="thumb-glyph mono">STK</span></div>
+        <div class="project-body">
+          <h3 class="project-title">Stock Sentiment Analyzer</h3>
+          <p class="project-desc">Real-time stock market sentiment analysis using news and social media data.</p>
+          <div class="tech-tags">
+            <span class="tag mono">Python</span><span class="tag mono">Flask</span><span class="tag mono">NLP</span>
+          </div>
+          <div class="render-wake" style="font-size: 11px; color: #9CA3AF; margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; text-align: center;">⚡ Free tier hosting — first load may take 30–60s to wake up</div>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/Rev-ImranKhan/Stock-Sentiment-Analyzer" class="link-btn">Code <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+          <a href="https://stock-sentiment-analyzer-3n9x.onrender.com" class="link-btn">Live Demo <svg class="icon-sm"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="projects-note reveal">
+      <p>Everything above was picked deliberately, not dumped. The full list of 30+ lives on GitHub.</p>
+      <a href="https://github.com/Rev-ImranKhan" class="btn btn-outline btn-sm" target="_blank" rel="noopener">View All 30+ on GitHub</a>
+    </div>
+  </div>
+</section>
+<!-- ================= EXPERIENCE ================= -->
+<section class="section section-alt" id="experience">
+  <div class="container container-narrow">
+    <p class="eyebrow mono">EXPERIENCE</p>
+    <h2 class="section-title">How I've spent my time</h2>
+
+    <div class="timeline">
+      
+      <!-- 1. HIREVIX (Foundation) -->
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-tag mono">FOUNDER</span>
+          <h3 class="timeline-title">HireVix</h3>
+          <p class="timeline-desc">
+            Founded an early-stage platform to hire online workers. It didn't scale — but it gave me 
+            the single most important lesson of my career: <strong>how to go from idea to MVP 
+            to market, and exactly where the cracks appear</strong>. 
+            That failure didn't stop me — it redirected me.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. PRODUCT R&D & STARTUP MODELS (Naya) -->
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-tag mono">PRODUCT EXPLORER</span>
+          <h3 class="timeline-title">11 Live Startup Models — SINO, Nyay AI, FasalGuru &amp; more</h3>
+          <p class="timeline-desc">
+            After HireVix, I realized betting everything on a single idea is risky. 
+            So I shifted my strategy — instead of one startup, I built <strong>11 live AI applications</strong> 
+            as independent product experiments, each testing a real-world hypothesis.
+            <br><br>
+            Today, I spend most of my time <strong>not just coding, but exploring</strong> — 
+            constantly asking <strong>"What new can I build that doesn't exist yet?"</strong> 
+            and rapid-prototyping the answer. This pipeline of constant innovation is where I truly thrive. 
+            Every project teaches me something new about users, markets, and technology.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
+<section class="section" id="achievements">
+  <div class="container container-narrow">
+    <p class="eyebrow mono">ACHIEVEMENTS</p>
+    <h2 class="section-title">Beyond solo building</h2>
+    <div class="achievement-card reveal">
+      <span class="achievement-icon"><svg class="icon-md"><use href="#i-trophy"/></svg></span>
+      <div>
+        <h3 class="achievement-title">Tech Nova Hackathon — Winner</h3>
+        <p class="achievement-desc">Competed at Tech Nova, building and presenting a working AI prototype end-to-end within the event's timeframe alongside other teams.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="section section-alt" id="education">
+  <div class="container container-narrow">
+    <p class="eyebrow mono">EDUCATION</p>
+    <h2 class="section-title">Where it started</h2>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-tag mono">2026</span>
+          <h3 class="timeline-title">BCA — Sree Maatha Degree College, Hospet</h3>
+          <p class="timeline-desc">Completed 2026, result awaited.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-tag mono">PUC</span>
+          <h3 class="timeline-title">Government Junior College, Gangavathi</h3>
+          <p class="timeline-desc">Higher secondary education.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <span class="timeline-tag mono">10th</span>
+          <h3 class="timeline-title">Sahithi Vidyalaya, Kampli</h3>
+          <p class="timeline-desc">Secondary education.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATIONS ================= -->
+<section class="section" id="certifications">
+  <div class="container">
+    <p class="eyebrow mono center">CERTIFICATIONS</p>
+    <h2 class="section-title center">Learning, on the record</h2>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-image-wrap">
+          <a href="certificates/wipro-certificate.jpg" target="_blank" rel="noopener">
+            <img src="certificates/wipro-certificate.jpg" alt="Wipro Certificate" class="cert-image" onerror="this.closest('.cert-image-wrap').style.display='none'">
+          </a>
+        </div>
+        <span class="cert-icon mono">01</span>
+        <h3 class="cert-title">Wipro — Learning Program</h3>
+        <p class="cert-issuer">Wipro</p>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-image-wrap">
+          <a href="certificates/powerbi-certificate.jpg" target="_blank" rel="noopener">
+            <img src="certificates/powerbi-certificate.jpg" alt="Power BI Certificate" class="cert-image" onerror="this.closest('.cert-image-wrap').style.display='none'">
+          </a>
+        </div>
+        <span class="cert-icon mono">02</span>
+        <h3 class="cert-title">Power BI</h3>
+        <p class="cert-issuer">Skill Nation / Jatan Shah</p>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-image-wrap">
+          <a href="certificates/ai-for-business.jpg" target="_blank" rel="noopener">
+            <img src="certificates/ai-for-business.jpg" alt="AI for Business" class="cert-image" onerror="this.closest('.cert-image-wrap').style.display='none'">
+          </a>
+        </div>
+        <span class="cert-icon mono">03</span>
+        <h3 class="cert-title">AI for Business</h3>
+        <p class="cert-issuer">Certification</p>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-image-wrap">
+          <a href="certificates/critical-thinking-ai.jpg" target="_blank" rel="noopener">
+            <img src="certificates/critical-thinking-ai.jpg" alt="Critical Thinking in AI Era" class="cert-image" onerror="this.closest('.cert-image-wrap').style.display='none'">
+          </a>
+        </div>
+        <span class="cert-icon mono">04</span>
+        <h3 class="cert-title">Critical Thinking in AI Era</h3>
+        <p class="cert-issuer">Certification</p>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-image-wrap">
+          <a href="certificates/growth-engine-business.jpg" target="_blank" rel="noopener">
+            <img src="certificates/growth-engine-business.jpg" alt="Growth Engine for your Business" class="cert-image" onerror="this.closest('.cert-image-wrap').style.display='none'">
+          </a>
+        </div>
+        <span class="cert-icon mono">05</span>
+        <h3 class="cert-title">Growth Engine for your Business</h3>
+        <p class="cert-issuer">Certification</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GITHUB STATS ================= -->
+<section class="section section-alt" id="github-stats">
+  <div class="container container-narrow">
+    <p class="eyebrow mono center">GITHUB ACTIVITY</p>
+    <h2 class="section-title center">Straight from the source</h2>
+    <p class="section-subtitle center">A live look at contributions and commit activity.</p>
+    <div class="stats-grid">
+      <img class="stats-img" id="statsCard" alt="GitHub stats" />
+      <img class="stats-img" id="streakCard" alt="Top languages" />
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="container container-narrow">
+    <p class="eyebrow mono center">CONTACT</p>
+    <h2 class="section-title center">Let's talk</h2>
+    <p class="section-subtitle center">Open to GenAI Developer, AI Solution Developer, and Applied AI Engineer roles.</p>
+    <div class="contact-grid">
+      <a href="mailto:imrankhanedu601@gmail.com" class="contact-item reveal">
+        <svg class="icon-md"><use href="#i-mail"/></svg>
+        <span>imrankhanedu601@gmail.com</span>
+      </a>
+      <a href="tel:9036672786" class="contact-item reveal">
+        <svg class="icon-md"><use href="#i-phone"/></svg>
+        <span>90366 72786 / 88805 43438</span>
+      </a>
+      <div class="contact-item">
+        <svg class="icon-md"><use href="#i-pin"/></svg>
+        <span>Kampli, Karnataka, India</span>
+      </div>
+      <a href="https://github.com/Rev-ImranKhan" class="contact-item reveal" target="_blank" rel="noopener">
+        <svg class="icon-md"><use href="#i-arrow-up-right"/></svg>
+        <span>GitHub Profile</span>
+      </a>
+    </div>
+    <div class="contact-cta reveal">
+      <a href="mailto:imrankhanedu601@gmail.com" class="btn btn-primary">Email Me Directly</a>
+      <a href="https://github.com/Rev-ImranKhan" class="btn btn-outline" target="_blank" rel="noopener">View GitHub Profile</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<p style="text-align: center; margin-top: 12px; font-size: 14px; color: var(--text-secondary);">
+  🌟 Open to full-time roles as a <strong style="color: var(--accent);">GenAI Developer</strong> or <strong style="color: var(--accent);">AI Solution Engineer</strong> — ready to build impact at scale.
+</p>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#hero" class="nav-brand">
+        <span class="nav-avatar mono">IK</span>
+        <span class="nav-name">Imran Khan</span>
+      </a>
+      <p class="footer-tag">Problem-first AI engineer. Find it, build it, ship it.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-socials">
+      <a href="https://github.com/Rev-ImranKhan" aria-label="GitHub" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:imrankhanedu601@gmail.com" aria-label="Email">Email</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Imran Khan. Built with care.</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg class="icon-md"><use href="#i-chevron-up"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
