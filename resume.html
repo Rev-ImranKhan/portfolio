@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Imran Khan - Resume</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Calibri', 'Carlito', 'Segoe UI', Arial, sans-serif;
+    color: #2b2b2b;
+    font-size: 9.3pt;
+    line-height: 1.32;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ================= HEADER ================= */
+  .header {
+    background: #16283e;
+    color: #ffffff;
+    padding: 16px 20mm 13px 20mm;
+  }
+  .name {
+    font-size: 25pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .role {
+    font-size: 10.5pt;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    color: #9fc4e8;
+    margin: 2px 0 9px 0;
+  }
+  .contact-row {
+    font-size: 8.8pt;
+    color: #dbe6f0;
+  }
+  .contact-row .item {
+    display: inline;
+  }
+  .contact-row .dot {
+    color: #5c7997;
+    margin: 0 7px;
+  }
+  .contact-row a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  .contact-row .lbl {
+    color: #9fc4e8;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  /* ================= BODY LAYOUT ================= */
+  .body-wrap {
+    display: flex;
+  }
+  .sidebar {
+    width: 33%;
+    background: #eef2f6;
+    padding: 14px 14px 20px 20mm;
+    min-height: 250mm;
+  }
+  .main {
+    width: 67%;
+    padding: 14px 20mm 20px 16px;
+  }
+
+  /* ================= SECTION TITLES ================= */
+  .sec-title {
+    font-size: 10.2pt;
+    font-weight: 700;
+    color: #16283e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 6px 0;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #16283e;
+  }
+  .sidebar .sec-title {
+    font-size: 9.8pt;
+    margin-top: 16px;
+  }
+  .sidebar .sec-title.first { margin-top: 0; }
+
+  /* ================= SIDEBAR: SKILLS ================= */
+  .skill-group {
+    margin-bottom: 8px;
+  }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-cat {
+    font-size: 8.4pt;
+    font-weight: 700;
+    color: #3a5a7a;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 3px;
+  }
+  .tag-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .tag {
+    background: #16283e;
+    color: #ffffff;
+    font-size: 7.8pt;
+    padding: 2.5px 7px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+
+  /* ================= SIDEBAR: EDUCATION ================= */
+  .edu-item {
+    margin-bottom: 8px;
+  }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-degree {
+    font-weight: 700;
+    font-size: 8.9pt;
+    color: #16283e;
+    line-height: 1.25;
+  }
+  .edu-school {
+    font-size: 8.3pt;
+    color: #444;
+    margin-top: 1px;
+  }
+  .edu-year {
+    font-size: 8pt;
+    color: #3a5a7a;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  /* ================= SIDEBAR: CERTIFICATIONS ================= */
+  .cert-list {
+    margin: 0;
+    padding-left: 13px;
+  }
+  .cert-list li {
+    margin-bottom: 3px;
+    font-size: 8.4pt;
+    color: #333;
+  }
+
+  /* ================= MAIN: SUMMARY ================= */
+  .summary {
+    text-align: justify;
+    margin: 0;
+    color: #333;
+  }
+
+  /* ================= MAIN: EXPERIENCE ================= */
+  .job {
+    margin-bottom: 8px;
+  }
+  .job:last-child { margin-bottom: 0; }
+  .job-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .job-title {
+    font-weight: 700;
+    font-size: 9.7pt;
+    color: #16283e;
+  }
+  .job-dates {
+    font-size: 8.4pt;
+    font-weight: 700;
+    color: #3a5a7a;
+    white-space: nowrap;
+  }
+  ul.bullets {
+    margin: 3px 0 0 0;
+    padding-left: 14px;
+  }
+  ul.bullets li {
+    margin-bottom: 2px;
+    text-align: justify;
+    color: #333;
+  }
+  ul.bullets li strong { color: #16283e; }
+
+  /* ================= MAIN: PROJECTS ================= */
+  .proj-item {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    border-left: 2.5px solid #9fc4e8;
+  }
+  .proj-item:last-child { margin-bottom: 0; }
+  .proj-name {
+    font-weight: 700;
+    color: #16283e;
+    font-size: 9.2pt;
+  }
+  .proj-desc {
+    color: #333;
+  }
+
+  /* ================= MAIN: ACHIEVEMENTS ================= */
+  ul.achieve {
+    margin: 0;
+    padding-left: 14px;
+  }
+  ul.achieve li {
+    margin-bottom: 2px;
+    color: #333;
+    text-align: justify;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <p class="name">Imran Khan</p>
+    <p class="role">GenAI Developer &amp; AI Solution Engineer</p>
+    <p class="contact-row">
+      <span class="item">Kampli, Karnataka, India</span>
+      <span class="dot">&bull;</span>
+      <span class="item">90366 72786</span>
+      <span class="dot">&bull;</span>
+      <span class="item">88805 43438</span>
+      <span class="dot">&bull;</span>
+      <span class="item"><a href="mailto:imrankhanedu601@gmail.com">imrankhanedu601@gmail.com</a></span>
+      <br>
+      <span class="item"><span class="lbl">Portfolio:</span> <a href="https://portfolio-gray-seven-81.vercel.app/">portfolio-gray-seven-81.vercel.app</a></span>
+      <span class="dot">&bull;</span>
+      <span class="item"><span class="lbl">GitHub:</span> <a href="https://github.com/Rev-ImranKhan">github.com/Rev-ImranKhan</a></span>
+    </p>
+  </div>
+
+  <div class="body-wrap">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <div class="sidebar">
+
+      <div class="sec-title first">Skills</div>
+
+      <div class="skill-group">
+        <div class="skill-cat">Languages</div>
+        <div class="tag-wrap">
+          <span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">Dart</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-cat">Backend</div>
+        <div class="tag-wrap">
+          <span class="tag">Flask</span><span class="tag">FastAPI</span><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">Uvicorn</span><span class="tag">Werkzeug</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-cat">AI / LLM Stack</div>
+        <div class="tag-wrap">
+          <span class="tag">Gemini API</span><span class="tag">Groq API</span><span class="tag">ChromaDB</span><span class="tag">RAG</span><span class="tag">LLM-as-Judge</span><span class="tag">Prompt Eng.</span><span class="tag">Agentic AI</span><span class="tag">Whisper</span><span class="tag">Tavily</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-cat">Frontend</div>
+        <div class="tag-wrap">
+          <span class="tag">React</span><span class="tag">Flutter</span><span class="tag">Chart.js</span><span class="tag">Plotly</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-cat">Database</div>
+        <div class="tag-wrap">
+          <span class="tag">SQLite</span><span class="tag">ChromaDB</span><span class="tag">Supabase</span><span class="tag">SQLAlchemy</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-cat">Auth &amp; Payments</div>
+        <div class="tag-wrap">
+          <span class="tag">Firebase Auth</span><span class="tag">Razorpay</span><span class="tag">JWT</span><span class="tag">Flask-Bcrypt</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-cat">Deployment &amp; Tools</div>
+        <div class="tag-wrap">
+          <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Vercel</span><span class="tag">Render</span><span class="tag">Gunicorn</span><span class="tag">Streamlit</span>
+        </div>
+      </div>
+
+      <div class="sec-title">Education</div>
+      <div class="edu-item">
+        <div class="edu-degree">BCA &mdash; Bachelor of Computer Applications</div>
+        <div class="edu-school">Sree Maatha Degree College, Hospet<br>(VSK University &mdash; Result Awaited)</div>
+        <div class="edu-year">2026</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Pre-University Course (PUC)</div>
+        <div class="edu-school">Govt. Junior College, Gangavathi</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">10th Standard</div>
+        <div class="edu-school">Sahithi Vidyalaya, Kampli</div>
+      </div>
+
+      <div class="sec-title">Certifications</div>
+      <ul class="cert-list">
+        <li>Wipro &mdash; Learning Program</li>
+        <li>Power BI &mdash; Skill Nation / Jatan Shah</li>
+        <li>AI for Business</li>
+        <li>Critical Thinking in the AI Era</li>
+        <li>Growth Engine for Your Business</li>
+      </ul>
+
+    </div>
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="main">
+
+      <div class="sec-title">Professional Summary</div>
+      <p class="summary">Self-taught GenAI Developer and Product Engineer with 2 years of independent experience building 30+ live AI applications. Founded and closed one startup (HireVix), then pivoted to build 11 live product experiments &mdash; AI tools for agriculture, education, legal access, and hiring. Known for relentless execution, problem-first thinking, and a founder's mindset; committed to seeing every project through to completion.</p>
+
+      <div class="sec-title" style="margin-top:12px;">Experience</div>
+
+      <div class="job">
+        <div class="job-row">
+          <span class="job-title">Product Explorer (Self-Directed)</span>
+          <span class="job-dates">2024 &ndash; Present</span>
+        </div>
+        <ul class="bullets">
+          <li>Designed, built, and shipped 11 live AI startup models end-to-end, including <strong>SINO</strong> (multi-agent AI platform with real-time conversational orchestration), <strong>Nyay AI</strong> (multilingual legal assistant supporting 9 Indian languages with FIR draft generation and PDF export), <strong>FasalGuru</strong> (crop disease detection using Gemini Vision for farmers), and <strong>Hallucination Catcher</strong> (RAG evaluation dashboard with LLM-as-judge and real-time hallucination scoring).</li>
+          <li>Deployed all projects on Vercel and Render, managing the full lifecycle from idea to live deployment independently, without external support or funding.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-row">
+          <span class="job-title">Founder &mdash; HireVix</span>
+          <span class="job-dates">2023 &ndash; 2024</span>
+        </div>
+        <ul class="bullets">
+          <li>Built an early-stage hiring platform for remote workers to test market viability.</li>
+          <li>Learned the gap between working code and a sustainable business; the outcome redirected my approach toward rapid, disciplined product experimentation.</li>
+        </ul>
+      </div>
+
+      <div class="sec-title" style="margin-top:12px;">Notable Projects (Live Products)</div>
+
+      <div class="proj-item">
+        <div><span class="proj-name">Ek Sawal, 4 Experts</span></div>
+        <div class="proj-desc">Single query analyzed by four distinct AI personas, demonstrating advanced prompt engineering.</div>
+      </div>
+      <div class="proj-item">
+        <div><span class="proj-name">Kisan Daily Briefing Agent</span></div>
+        <div class="proj-desc">Agentic AI delivering real-time weather and farming advisories via SSE streaming.</div>
+      </div>
+      <div class="proj-item">
+        <div><span class="proj-name">ShikshaBot</span></div>
+        <div class="proj-desc">AI NCERT tutor for Class 6&ndash;12 students using Gemini/Groq LLMs.</div>
+      </div>
+      <div class="proj-item">
+        <div><span class="proj-name">Sarkari Yojana Finder</span></div>
+        <div class="proj-desc">RAG-powered chatbot for discovering Indian government welfare schemes.</div>
+      </div>
+      <div class="proj-item">
+        <div><span class="proj-name">KisanBazaar</span></div>
+        <div class="proj-desc">Farmer-to-buyer marketplace cutting out middlemen.</div>
+      </div>
+      <div class="proj-item">
+        <div><span class="proj-name">AI Resume Screener</span></div>
+        <div class="proj-desc">Compares resumes with job descriptions to generate match scores and hiring recommendations.</div>
+      </div>
+      <div class="proj-item">
+        <div><span class="proj-name">Stock Sentiment Analyzer</span></div>
+        <div class="proj-desc">Real-time market sentiment analysis using news and social media data.</div>
+      </div>
+
+      <div class="sec-title" style="margin-top:12px;">Achievements</div>
+      <ul class="achieve">
+        <li>Tech Vistara Hackathon Participant &mdash; built and presented an AI prototype end-to-end within the event's timeframe.</li>
+        <li>Built 30+ independent AI applications (11 currently live) with zero mentorship or formal internships.</li>
+      </ul>
+
+    </div>
+  </div>
+
+</body>
+</html>
