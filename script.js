@@ -94,3 +94,53 @@
     streakCard.addEventListener('error', () => { streakCard.style.display = 'none'; });
   }
 })();
+
+/*/* ============================================
+   DARK THEME TOGGLE + STARS
+   ============================================ */
+(function() {
+  const toggleBtn = document.getElementById('themeToggle');
+  const label = document.getElementById('toggleLabel');
+  const starsContainer = document.getElementById('starsContainer');
+  let starsGenerated = false;
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    label.textContent = 'Light';
+    generateStars();
+  }
+
+  // Toggle theme
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    const isDark = document.body.classList.contains('dark-theme');
+    label.textContent = isDark ? 'Light' : 'Dark';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    if (isDark && !starsGenerated) {
+      generateStars();
+    }
+  });
+
+  // Generate twinkling stars
+  function generateStars() {
+    if (starsGenerated) return;
+    const count = 120;
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      const size = Math.random() * 3 + 1;
+      star.style.width = size + 'px';
+      star.style.height = size + 'px';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+      star.style.animationDelay = (Math.random() * 5) + 's';
+      star.style.opacity = Math.random() * 0.7 + 0.3;
+      starsContainer.appendChild(star);
+    }
+    starsGenerated = true;
+  }
+})();

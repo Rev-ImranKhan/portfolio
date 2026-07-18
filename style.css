@@ -728,3 +728,120 @@ a.contact-item:hover { transform: translateY(-3px); border-color: rgba(var(--acc
 .timeline-tag {
     color: var(--accent) !important; /* Purple rahega, ye meta hai */
 }
+
+/* ============================================
+   DARK THEME VARIABLES (OVERRIDE)
+   ============================================ */
+body.dark-theme {
+  --bg: #0A0A0F;
+  --surface: #14141E;
+  --surface-strong: #1E1E2E;
+  --card: #181825;
+  --text-primary: #F1F1F9;
+  --text-secondary: #A8A8C8;
+  --border: #2A2A40;
+  --accent: #A78BFA;
+  --accent-2: #C026D3;
+  --accent-rgb: 167, 139, 250;
+  --nav-bg: rgba(10, 10, 15, 0.85);
+}
+
+/* ============================================
+   PROFESSIONAL THEME TOGGLE SWITCH
+   ============================================ */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  font-family: inherit;
+}
+
+/* Toggle Track */
+.toggle-track {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: var(--border);
+  border-radius: 999px;
+  transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+/* Toggle Thumb (Knob) */
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Theme - Active State */
+body.dark-theme .toggle-track {
+  background: var(--accent);
+}
+
+body.dark-theme .toggle-thumb {
+  transform: translateX(20px);
+  background: #ffffff;
+}
+
+/* Toggle Label */
+.toggle-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  min-width: 32px;
+  text-align: left;
+  letter-spacing: 0.3px;
+}
+
+body.dark-theme .toggle-label {
+  color: var(--accent);
+}
+
+/* Hover Effect */
+.theme-toggle:hover .toggle-thumb {
+  box-shadow: 0 2px 12px rgba(var(--accent-rgb), 0.3);
+}
+
+.theme-toggle:hover .toggle-track {
+  background: var(--text-secondary);
+}
+
+body.dark-theme .theme-toggle:hover .toggle-track {
+  background: #A78BFA;
+}
+
+/* ============================================
+   STARS BACKGROUND (DARK MODE ONLY)
+   ============================================ */
+body.dark-theme .stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+body.dark-theme .star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle var(--duration) ease-in-out infinite alternate;
+}
+@keyframes twinkle {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
