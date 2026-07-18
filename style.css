@@ -699,10 +699,14 @@ a.contact-item:hover { transform: translateY(-3px); border-color: rgba(var(--acc
 }
 
 /* ✅ META / LABELS — LIGHT HI RAHNE DO (Ye secondary hai) */
-.about-copy .eyebrow,
 .about-copy .principle-mark,
 .stat-label {
     color: var(--text-secondary) !important; /* Light grey rahega */
+}
+
+/* 🔥 ABOUT ME heading — Purple rakho (baaki sections ki tarah) */
+.about-copy .eyebrow {
+    color: var(--accent) !important;
 }
 
 /* ============================================
