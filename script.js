@@ -15,19 +15,25 @@
   const navBurger = document.getElementById('navBurger');
   const navLinks = document.getElementById('navLinks');
 
-  navBurger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('mobile-open');
-    navBurger.innerHTML = isOpen
-      ? '<svg class="icon"><use href="#i-close"/></svg>'
-      : '<svg class="icon"><use href="#i-menu"/></svg>';
-  });
-
-  navLinks.querySelectorAll('.nav-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('mobile-open');
-      navBurger.innerHTML = '<svg class="icon"><use href="#i-menu"/></svg>';
+  if (navBurger) {
+    navBurger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('mobile-open');
+      navBurger.innerHTML = isOpen
+        ? '<svg class="icon"><use href="#i-close"/></svg>'
+        : '<svg class="icon"><use href="#i-menu"/></svg>';
     });
-  });
+  }
+
+  if (navLinks) {
+    navLinks.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+        if (navBurger) {
+          navBurger.innerHTML = '<svg class="icon"><use href="#i-menu"/></svg>';
+        }
+      });
+    });
+  }
 
   /* ============================================
      NAV SCROLL STATE + ACTIVE LINK + BACK TO TOP
@@ -38,7 +44,7 @@
   const backToTop = document.getElementById('backToTop');
 
   function onScroll() {
-    nav.classList.toggle('scrolled', window.scrollY > 30);
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 30);
 
     let currentId = '';
     const scrollPos = window.scrollY + 140;
@@ -49,15 +55,17 @@
       link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
     });
 
-    backToTop.classList.toggle('visible', window.scrollY > 600);
+    if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 600);
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-  });
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    });
+  }
 
   /* ============================================
      SCROLL REVEAL
@@ -79,19 +87,20 @@
   }
 
   /* ============================================
-     GITHUB STATS WIDGET
+     GITHUB STATS WIDGET (FIXED: Null checks)
      ============================================ */
   const statsCard = document.getElementById('statsCard');
   const streakCard = document.getElementById('streakCard');
 
   if (GITHUB_USERNAME) {
-    statsCard.src = `https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&theme=default&hide_border=true&bg_color=ffffff&title_color=7C3AED&text_color=6B7280&icon_color=7C3AED`;
-    streakCard.src = `https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&hide_border=true&bg_color=ffffff&title_color=7C3AED&text_color=6B7280`;
-
-    // If an individual card fails to load, just hide that one image.
-    // The section itself always stays visible.
-    statsCard.addEventListener('error', () => { statsCard.style.display = 'none'; });
-    streakCard.addEventListener('error', () => { streakCard.style.display = 'none'; });
+    if (statsCard) {
+      statsCard.src = `https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&theme=default&hide_border=true&bg_color=ffffff&title_color=7C3AED&text_color=6B7280&icon_color=7C3AED`;
+      statsCard.addEventListener('error', () => { statsCard.style.display = 'none'; });
+    }
+    if (streakCard) {
+      streakCard.src = `https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&hide_border=true&bg_color=ffffff&title_color=7C3AED&text_color=6B7280`;
+      streakCard.addEventListener('error', () => { streakCard.style.display = 'none'; });
+    }
   }
 })();
 
@@ -99,7 +108,16 @@
    DARK THEME TOGGLE + STARS
    ============================================ */
 (function() {
+  console.log('🔥 Dark theme toggle script loaded!');
+
   const toggleBtn = document.getElementById('themeToggle');
+  console.log('Toggle button found:', toggleBtn);
+
+  if (!toggleBtn) {
+    console.error('❌ Button with id "themeToggle" not found!');
+    return;
+  }
+
   const label = document.getElementById('toggleLabel');
   const starsContainer = document.getElementById('starsContainer');
   let starsGenerated = false;
@@ -108,17 +126,18 @@
   const savedTheme = localStorage.getItem('theme') || 'light';
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-theme');
-    label.textContent = 'Light';
+    if (label) label.textContent = 'Light';
     generateStars();
   }
 
   // Toggle theme
-  toggleBtn.addEventListener('click', () => {
+  toggleBtn.addEventListener('click', function() {
+    console.log('🔘 Button clicked!');
     document.body.classList.toggle('dark-theme');
     const isDark = document.body.classList.contains('dark-theme');
-    label.textContent = isDark ? 'Light' : 'Dark';
+    if (label) label.textContent = isDark ? 'Light' : 'Dark';
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    
+
     if (isDark && !starsGenerated) {
       generateStars();
     }
@@ -126,7 +145,7 @@
 
   // Generate twinkling stars
   function generateStars() {
-    if (starsGenerated) return;
+    if (starsGenerated || !starsContainer) return;
     const count = 120;
     for (let i = 0; i < count; i++) {
       const star = document.createElement('div');
