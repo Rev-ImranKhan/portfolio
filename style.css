@@ -917,3 +917,49 @@ body.dark-theme .toggle-thumb {
 body.dark-theme .toggle-label {
   color: #a78bfa;
 }
+
+/* ============================================
+   FORCE HERO CARD STABILITY (Light & Dark)
+   ============================================ */
+.hero,
+body.dark-theme .hero {
+    position: relative !important;
+    z-index: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: auto !important;
+    padding: 128px 0 64px !important;
+    overflow: visible !important;
+}
+
+.hero-card,
+body.dark-theme .hero-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: var(--max-width) !important;
+    padding: 64px !important;
+    z-index: 2 !important;
+    overflow: visible !important;
+}
+
+/* Ensure grid inside hero-card doesn't break */
+.hero-card {
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    gap: 40px !important;
+    align-items: center !important;
+}
+
+/* Mobile Responsive for Hero */
+@media (max-width: 900px) {
+    .hero-card {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        padding: 48px 32px !important;
+    }
+}
