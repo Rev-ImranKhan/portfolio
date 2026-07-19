@@ -1014,3 +1014,11 @@ body.dark-theme .hero-card {
     padding: 48px 32px !important;
   }
 }
+
+/* ============================================
+   STOP HERO CARD SHIFT ON THEME TOGGLE
+   ============================================ */
+.hero-card,
+body.dark-theme .hero-card {
+  transition: none !important;
+}
