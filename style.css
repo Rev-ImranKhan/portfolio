@@ -963,3 +963,54 @@ body.dark-theme .hero-card {
         padding: 48px 32px !important;
     }
 }
+
+/* ============================================
+   FIX: HERO CARD STABLE ON THEME TOGGLE
+   ============================================ */
+.hero {
+  position: relative !important;
+  padding: 128px 0 64px !important;
+  min-height: auto !important;
+}
+
+.hero-card {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  margin: 0 auto !important;
+  padding: 64px !important;
+  width: 100% !important;
+  max-width: var(--max-width) !important;
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: 40px !important;
+  align-items: center !important;
+  transition: none !important; /* 🔥 Prevent any shift on toggle */
+}
+
+/* Dark theme — same layout, no shift */
+body.dark-theme .hero,
+body.dark-theme .hero-card {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  margin: 0 auto !important;
+  padding: 64px !important;
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: 40px !important;
+  align-items: center !important;
+  transition: none !important;
+}
+
+/* Mobile fix */
+@media (max-width: 900px) {
+  .hero-card,
+  body.dark-theme .hero-card {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    padding: 48px 32px !important;
+  }
+}
