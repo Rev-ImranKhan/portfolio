@@ -732,3 +732,188 @@ a.contact-item:hover { transform: translateY(-3px); border-color: rgba(var(--acc
 .timeline-tag {
     color: var(--accent) !important; /* Purple rahega, ye meta hai */
 }
+
+/* ============================================
+   DARK THEME: GALAXY/SPACE VIBE (Toggle ke saath)
+   ============================================ */
+body.dark-theme {
+  --bg: #0a0a12;
+  --surface: rgba(18, 16, 30, 0.7);
+  --card: rgba(12, 10, 24, 0.75);
+  --text-primary: #f0eeff;
+  --text-secondary: #c4b5fd;
+  --border: rgba(167, 139, 250, 0.2);
+  --accent: #a78bfa;
+  --accent-2: #7c3aed;
+  --accent-rgb: 167, 139, 250;
+  --nav-bg: rgba(10, 10, 18, 0.92);
+  --shadow-sm: 0 2px 20px rgba(167, 139, 250, 0.08);
+  --shadow-md: 0 10px 40px rgba(167, 139, 250, 0.15);
+  --shadow-lg: 0 30px 80px rgba(124, 58, 237, 0.25);
+}
+
+/* Background with nebula gradient */
+body.dark-theme {
+  background: radial-gradient(ellipse at 30% 20%, #1a0a2e 0%, #0a0a12 70%) !important;
+}
+
+/* Glassmorphism cards */
+body.dark-theme .hero-card,
+body.dark-theme .stat-card,
+body.dark-theme .project-card,
+body.dark-theme .cert-card,
+body.dark-theme .contact-item,
+body.dark-theme .achievement-card,
+body.dark-theme .skill-tile {
+  background: rgba(18, 16, 30, 0.6) !important;
+  backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(167, 139, 250, 0.12) !important;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(167, 139, 250, 0.08) !important;
+}
+
+body.dark-theme .hero-card:hover,
+body.dark-theme .project-card:hover {
+  border-color: rgba(167, 139, 250, 0.35) !important;
+  box-shadow: 0 15px 60px rgba(124, 58, 237, 0.2) !important;
+}
+
+/* Section backgrounds */
+body.dark-theme .section-alt {
+  background: rgba(10, 8, 20, 0.5) !important;
+}
+
+/* Bright text */
+body.dark-theme .about-copy .body-lg,
+body.dark-theme .about-copy .body-md,
+body.dark-theme .about-copy p:not(.eyebrow):not(.principle-mark),
+body.dark-theme .philosophy-box p,
+body.dark-theme .about-copy .body-md[style*="background"],
+body.dark-theme .principle-item span,
+body.dark-theme .timeline-desc,
+body.dark-theme .project-desc,
+body.dark-theme .project-title,
+body.dark-theme .skill-name,
+body.dark-theme .skill-group-title,
+body.dark-theme .achievement-title,
+body.dark-theme .achievement-desc,
+body.dark-theme .contact-item,
+body.dark-theme .footer-tag,
+body.dark-theme .footer-links a,
+body.dark-theme .footer-socials a,
+body.dark-theme .footer-bottom p {
+  color: #e8e0ff !important;
+}
+
+body.dark-theme .timeline-title {
+  color: #c4b5fd !important;
+}
+
+body.dark-theme .about-copy strong,
+body.dark-theme .principle-item strong,
+body.dark-theme .timeline-desc strong {
+  color: #ffffff !important;
+}
+
+/* Purple accents with glow */
+body.dark-theme .eyebrow,
+body.dark-theme .role-badge,
+body.dark-theme .tag,
+body.dark-theme .stat-number,
+body.dark-theme .availability-badge,
+body.dark-theme .timeline-tag {
+  color: #a78bfa !important;
+  text-shadow: 0 0 20px rgba(167, 139, 250, 0.3) !important;
+}
+
+/* Glowing buttons */
+body.dark-theme .btn-primary {
+  background: #7c3aed !important;
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.4) !important;
+}
+body.dark-theme .btn-primary:hover {
+  background: #6d28d9 !important;
+  box-shadow: 0 0 50px rgba(124, 58, 237, 0.6) !important;
+}
+
+body.dark-theme .btn-outline {
+  background: transparent !important;
+  border-color: rgba(167, 139, 250, 0.3) !important;
+  color: #c4b5fd !important;
+}
+body.dark-theme .btn-outline:hover {
+  border-color: #a78bfa !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 30px rgba(167, 139, 250, 0.15) !important;
+}
+
+/* ===== STARS ANIMATION ===== */
+body.dark-theme .stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+body.dark-theme .star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle var(--duration) ease-in-out infinite alternate;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+@keyframes twinkle {
+  0% { opacity: 0.1; transform: scale(0.6); }
+  100% { opacity: 1; transform: scale(1.4); }
+}
+
+/* ===== TOGGLE SWITCH ===== */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.toggle-track {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  background: var(--border);
+  border-radius: 999px;
+  transition: background 0.4s ease;
+  flex-shrink: 0;
+}
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+body.dark-theme .toggle-track {
+  background: #7c3aed;
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
+}
+body.dark-theme .toggle-thumb {
+  transform: translateX(22px);
+  background: #fff;
+}
+.toggle-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  min-width: 36px;
+}
+body.dark-theme .toggle-label {
+  color: #a78bfa;
+}
