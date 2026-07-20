@@ -89,56 +89,79 @@
 })();
 
 // ============================================================
-// DARK THEME TOGGLE (DOMContentLoaded ensure button exists)
+// DARK GALAXY THEME — toggle logic + star field generation
+// (body.dark-theme is applied instantly by a tiny inline
+// <script> at the very top of <body>, so there's no flash
+// of the wrong theme on page load)
 // ============================================================
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('✅ DOM loaded — setting up dark theme toggle');
-
+document.addEventListener('DOMContentLoaded', function () {
   const toggleBtn = document.getElementById('themeToggle');
-  console.log('🔘 Toggle button found:', toggleBtn);
-
-  if (!toggleBtn) {
-    console.error('❌ Button not found!');
-    return;
-  }
-
   const label = document.getElementById('toggleLabel');
   const starsContainer = document.getElementById('starsContainer');
-  let starsGenerated = false;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Load saved theme
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-theme');
-    if (label) label.textContent = 'Light';
-    generateStars();
+  let sceneBuilt = false;
+
+  function setLabel(isDark) {
+    if (label) label.textContent = isDark ? 'Dark' : 'Light';
+    if (toggleBtn) toggleBtn.setAttribute('aria-checked', String(isDark));
   }
 
-  toggleBtn.addEventListener('click', function() {
-    console.log('🔥 Button clicked!');
-    document.body.classList.toggle('dark-theme');
-    const isDark = document.body.classList.contains('dark-theme');
-    if (label) label.textContent = isDark ? 'Light' : 'Dark';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    if (isDark && !starsGenerated) generateStars();
-  });
+  function buildSpaceScene() {
+    if (sceneBuilt || !starsContainer) return;
+    sceneBuilt = true;
 
-  function generateStars() {
-    if (starsGenerated || !starsContainer) return;
-    const count = 150;
-    for (let i = 0; i < count; i++) {
+    const frag = document.createDocumentFragment();
+
+    // 180 twinkling stars (spec asked for 150+)
+    const STAR_COUNT = 180;
+    for (let i = 0; i < STAR_COUNT; i++) {
       const star = document.createElement('div');
       star.className = 'star';
-      const size = Math.random() * 3.5 + 0.8;
-      star.style.cssText = `
-        width: ${size}px; height: ${size}px;
-        left: ${Math.random() * 100}%;
-        top: ${Math.random() * 100}%;
-        animation-duration: ${Math.random() * 4 + 2}s;
-        animation-delay: ${Math.random() * 6}s;
-        opacity: ${Math.random() * 0.6 + 0.2};
-      `;
-      starsContainer.appendChild(star);
+      const size = (Math.random() * 2.6 + 0.6).toFixed(2);
+      const peak = (Math.random() * 0.5 + 0.5).toFixed(2);
+      const left = (Math.random() * 100).toFixed(2);
+      const top = (Math.random() * 100).toFixed(2);
+      const dur = (Math.random() * 3.5 + 2).toFixed(2);
+      const delay = (Math.random() * 6).toFixed(2);
+      star.style.cssText =
+        `width:${size}px;height:${size}px;left:${left}%;top:${top}%;` +
+        `--peak:${peak};animation-duration:${reduceMotion ? '0.001ms' : dur + 's'};animation-delay:${delay}s;`;
+      frag.appendChild(star);
     }
-    starsGenerated = true;
+
+    // shooting stars
+    if (!reduceMotion) {
+      const SHOOT_COUNT = 5;
+      for (let i = 0; i < SHOOT_COUNT; i++) {
+        const shoot = document.createElement('div');
+        shoot.className = 'shooting-star';
+        const top = (Math.random() * 40).toFixed(2);
+        const left = (Math.random() * 50 + 35).toFixed(2);
+        const angle = (Math.random() * 20 + 24).toFixed(1);
+        const dur = (Math.random() * 3 + 5).toFixed(2);
+        const delay = (Math.random() * 10).toFixed(2);
+        shoot.style.cssText =
+          `top:${top}%;left:${left}%;--angle:${angle}deg;` +
+          `animation-duration:${dur}s;animation-delay:${delay}s;`;
+        frag.appendChild(shoot);
+      }
+    }
+
+    starsContainer.appendChild(frag);
+  }
+
+  const startedDark = document.body.classList.contains('dark-theme');
+  if (startedDark) buildSpaceScene();
+  setLabel(startedDark);
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      document.body.classList.toggle('dark-theme');
+      const isDark = document.body.classList.contains('dark-theme');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      setLabel(isDark);
+      if (isDark) buildSpaceScene();
+    });
   }
 });

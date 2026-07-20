@@ -737,3 +737,247 @@ a.contact-item:hover { transform: translateY(-3px); border-color: rgba(var(--acc
 .timeline-tag {
     color: var(--accent) !important; /* Purple rahega, ye meta hai */
 }
+
+/* ============================================================
+   DARK GALAXY THEME  (everything below applies ONLY inside
+   body.dark-theme — light mode stays 100% untouched)
+   ============================================================ */
+
+/* ---- 1. Token overrides (colors cascade to every component
+   that already uses var(--...), so most of the site re-themes
+   itself automatically) ---- */
+body.dark-theme {
+  --bg: #0c0620;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-strong: rgba(255, 255, 255, 0.07);
+  --card: rgba(255, 255, 255, 0.05);
+  --text-primary: #F1EDFB;
+  --text-secondary: #A9A3C4;
+  --border: rgba(167, 139, 250, 0.16);
+  --accent: #A78BFA;
+  --accent-2: #E879F9;
+  --accent-rgb: 167, 139, 250;
+  --nav-bg: rgba(12, 6, 32, 0.6);
+  --shadow-sm: 0 2px 16px rgba(167, 139, 250, 0.16);
+  --shadow-md: 0 12px 32px rgba(167, 139, 250, 0.20);
+  --shadow-lg: 0 26px 60px rgba(167, 139, 250, 0.28);
+
+  background: radial-gradient(ellipse 120% 70% at 50% -10%, #2b0f52 0%, #150a30 42%, #05020d 100%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+}
+
+body.dark-theme .nav-avatar { background: #0c0620; }
+
+/* ---- 2. Glassmorphism cards (background/border/shadow only —
+   never padding/width/height, so nothing reflows on toggle) ---- */
+body.dark-theme .hero-card,
+body.dark-theme .stat-card,
+body.dark-theme .skill-tile,
+body.dark-theme .project-card,
+body.dark-theme .contact-item,
+body.dark-theme .cert-card,
+body.dark-theme .achievement-card {
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(167, 139, 250, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+body.dark-theme .stat-card-accent { background: rgba(167, 139, 250, 0.08); }
+body.dark-theme .cert-card { border-style: dashed; }
+
+body.dark-theme .btn-outline {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(167, 139, 250, 0.35);
+  color: var(--text-primary);
+}
+body.dark-theme .btn-outline:hover { box-shadow: 0 0 20px rgba(167, 139, 250, 0.25); }
+
+body.dark-theme .back-to-top {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: rgba(167, 139, 250, 0.25);
+}
+
+/* keep skillicons legible against dark glass */
+body.dark-theme .skill-badge-logo { background: #fff; border-radius: 8px; }
+
+/* ---- 3. Text overrides for the hard-coded !important rules
+   in the About / Experience sections ---- */
+body.dark-theme .about-copy .body-lg,
+body.dark-theme .about-copy .body-md,
+body.dark-theme .about-copy p:not(.eyebrow):not(.principle-mark) {
+  color: var(--text-primary) !important;
+}
+body.dark-theme .about-copy strong { color: #ffffff !important; }
+body.dark-theme .philosophy-box p { color: var(--text-primary) !important; }
+body.dark-theme .about-copy .body-md[style*="background"] { color: var(--text-primary) !important; }
+body.dark-theme .about-copy .body-md[style*="background"] strong { color: #ffffff !important; }
+body.dark-theme .principle-item span { color: var(--text-primary) !important; }
+body.dark-theme .principle-item strong { color: #ffffff !important; }
+body.dark-theme .timeline-desc { color: var(--text-primary) !important; }
+body.dark-theme .timeline-title { color: #ffffff !important; }
+body.dark-theme .timeline-desc strong { color: #ffffff !important; }
+
+/* ============================================================
+   THEME TOGGLE SWITCH
+   ============================================================ */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.theme-toggle-track {
+  position: relative;
+  width: 50px;
+  height: 27px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  transition: background-color .3s var(--ease), border-color .3s var(--ease);
+}
+.theme-toggle-thumb {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 21px; height: 21px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .35s var(--ease), background-color .35s var(--ease);
+}
+.theme-toggle-thumb .icon-sm { width: 13px; height: 13px; }
+.theme-toggle-thumb .i-sun { color: var(--accent); display: block; }
+.theme-toggle-thumb .i-moon { color: var(--accent); display: none; }
+.theme-toggle-label { font-size: 12.5px; font-weight: 600; color: var(--text-secondary); min-width: 32px; }
+
+body.dark-theme .theme-toggle-track { background: rgba(255, 255, 255, 0.08); border-color: rgba(167, 139, 250, 0.35); }
+body.dark-theme .theme-toggle-thumb { transform: translateX(23px); background: #1c1633; }
+body.dark-theme .theme-toggle-thumb .i-sun { display: none; }
+body.dark-theme .theme-toggle-thumb .i-moon { display: block; }
+body.dark-theme .theme-toggle-label { color: var(--text-primary); }
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle-thumb { transition: none; }
+}
+
+/* ============================================================
+   SPACE / GALAXY BACKGROUND SCENE — visible ONLY in dark mode
+   ============================================================ */
+.space-decor {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .7s var(--ease);
+}
+body.dark-theme .space-decor { opacity: 1; visibility: visible; }
+
+.space-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: .55;
+}
+.glow-1 { width: 440px; height: 440px; top: -140px; left: -110px; background: radial-gradient(circle, rgba(167,139,250,.55), transparent 70%); }
+.glow-2 { width: 540px; height: 540px; bottom: -170px; right: -150px; background: radial-gradient(circle, rgba(232,121,249,.42), transparent 70%); }
+
+/* ---- stars ---- */
+.stars-container { position: absolute; inset: 0; }
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation-name: twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: calc(var(--peak, .8) * .25); transform: scale(.85); }
+  50%      { opacity: var(--peak, .8); transform: scale(1.15); }
+}
+
+/* ---- shooting stars ---- */
+.shooting-star {
+  position: absolute;
+  width: 120px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,.95), rgba(255,255,255,0));
+  transform-origin: left center;
+  animation-name: shoot;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+@keyframes shoot {
+  0%   { transform: rotate(var(--angle, 32deg)) translateX(0); opacity: 0; }
+  6%   { opacity: 1; }
+  55%  { opacity: 1; }
+  78%  { transform: rotate(var(--angle, 32deg)) translateX(-480px); opacity: 0; }
+  100% { transform: rotate(var(--angle, 32deg)) translateX(-480px); opacity: 0; }
+}
+
+/* ---- rocket ---- */
+.space-rocket {
+  position: absolute;
+  bottom: 10%;
+  left: 6%;
+  font-size: 38px;
+  line-height: 1;
+  filter: drop-shadow(0 0 14px rgba(167,139,250,.55));
+  animation: rocketFloat 7s ease-in-out infinite;
+}
+@keyframes rocketFloat {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50%      { transform: translateY(-26px) rotate(-14deg); }
+}
+
+/* ---- rotating planet with ring ---- */
+.space-planet {
+  position: absolute;
+  top: 13%;
+  right: 6%;
+  width: 84px;
+  height: 84px;
+  animation: planetFloat 8s ease-in-out infinite;
+}
+@keyframes planetFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(18px); }
+}
+.planet-body {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 65%, rgba(0,0,0,.28) 0 9%, transparent 10%),
+    radial-gradient(circle at 68% 32%, rgba(0,0,0,.2) 0 7%, transparent 8%),
+    radial-gradient(circle at 35% 30%, #D8C9FF, #A78BFA 45%, #6D28D9 100%);
+  box-shadow: 0 0 40px rgba(167,139,250,.5), inset -10px -10px 18px rgba(0,0,0,.35);
+  animation: planetSpin 50s linear infinite;
+}
+@keyframes planetSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.planet-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 152%; height: 34%;
+  border: 3px solid rgba(232,121,249,.55);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  box-shadow: 0 0 14px rgba(232,121,249,.45);
+}
+
+@media (max-width: 640px) {
+  .space-rocket, .space-planet { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star, .shooting-star, .space-rocket, .space-planet, .planet-body {
+    animation: none !important;
+  }
+}

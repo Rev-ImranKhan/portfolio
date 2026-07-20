@@ -43,8 +43,23 @@
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
     <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 5H4a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4M17 5h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
     <symbol id="i-chevron-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.2 14.3A8.4 8.4 0 0 1 9.7 3.8a8.4 8.4 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </defs>
 </svg>
+
+<!-- ================= SPACE / GALAXY DECORATION (dark mode only) ================= -->
+<script>document.body.classList.toggle('dark-theme', localStorage.getItem('theme') === 'dark');</script>
+<div class="space-decor" id="spaceDecor" aria-hidden="true">
+  <div class="space-glow glow-1"></div>
+  <div class="space-glow glow-2"></div>
+  <div class="stars-container" id="starsContainer"></div>
+  <div class="space-planet">
+    <div class="planet-ring"></div>
+    <div class="planet-body"></div>
+  </div>
+  <div class="space-rocket">🚀</div>
+</div>
 
 <!-- ================= NAV ================= -->
 <nav class="nav" id="nav">
@@ -62,6 +77,15 @@
     </ul>
     <div class="nav-actions">
       <a href="https://github.com/Rev-ImranKhan" class="nav-social" target="_blank" rel="noopener">GitHub</a>
+      <button class="theme-toggle" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Toggle dark mode">
+        <span class="theme-toggle-track">
+          <span class="theme-toggle-thumb">
+            <svg class="icon-sm i-sun"><use href="#i-sun"/></svg>
+            <svg class="icon-sm i-moon"><use href="#i-moon"/></svg>
+          </span>
+        </span>
+        <span class="theme-toggle-label mono" id="toggleLabel">Light</span>
+      </button>
       <button class="nav-burger" id="navBurger" aria-label="Open menu">
         <svg class="icon"><use href="#i-menu"/></svg>
       </button>
