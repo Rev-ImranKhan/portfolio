@@ -413,7 +413,7 @@ a:focus-visible, button:focus-visible {
   flex-direction: column;
   transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
 }
-.project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(var(--accent-rgb), 0.28); }
+.project-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: rgba(var(--accent-rgb), 0.28); }
 
 .project-thumb { height: 140px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
 .project-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent 60%); }
@@ -478,7 +478,7 @@ a:focus-visible, button:focus-visible {
   align-items: flex-start;
   transition: transform .35s var(--ease), box-shadow .35s var(--ease);
 }
-.achievement-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.achievement-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
 .achievement-icon {
   width: 52px; height: 52px;
   border-radius: 14px;
@@ -505,7 +505,7 @@ a:focus-visible, button:focus-visible {
   overflow: hidden;
   transition: transform .35s var(--ease), border-color .35s var(--ease);
 }
-.cert-card:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb), 0.35); }
+.cert-card:hover { transform: translateY(-8px); border-color: rgba(var(--accent-rgb), 0.35); }
 .cert-icon { display: block; font-size: 13px; color: var(--accent); margin-bottom: 14px; }
 .cert-image-wrap { margin: -30px -30px 18px; overflow: hidden; }
 .cert-image-wrap a { display: block; cursor: pointer; }
@@ -534,7 +534,7 @@ a:focus-visible, button:focus-visible {
   transition: transform .3s var(--ease), border-color .3s var(--ease);
 }
 .contact-item .icon-md { color: var(--accent); flex-shrink: 0; }
-a.contact-item:hover { transform: translateY(-3px); border-color: rgba(var(--accent-rgb), 0.3); }
+a.contact-item:hover { transform: translateY(-6px); border-color: rgba(var(--accent-rgb), 0.3); }
 .contact-cta { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
 /* ============================================
@@ -572,6 +572,25 @@ a.contact-item:hover { transform: translateY(-3px); border-color: rgba(var(--acc
    ============================================ */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+/* Fix: .reveal.in-view (above) has the same CSS specificity as the
+   card :hover rules and sits later in the file, so it was silently
+   cancelling the hover lift once a card scrolled into view. These
+   rules add an extra class to win the specificity tie so hover
+   always lifts the card, on every device. */
+.project-card.reveal.in-view:hover { transform: translateY(-10px); }
+.achievement-card.reveal.in-view:hover { transform: translateY(-6px); }
+.cert-card.reveal.in-view:hover { transform: translateY(-8px); }
+a.contact-item.reveal.in-view:hover { transform: translateY(-6px); }
+
+/* Touch devices: give the same lift feedback on tap since :hover
+   doesn't reliably fire on touchscreens */
+@media (hover: none) {
+  .project-card.reveal.in-view:active { transform: translateY(-6px) scale(0.99); }
+  .achievement-card.reveal.in-view:active { transform: translateY(-4px) scale(0.99); }
+  .cert-card.reveal.in-view:active { transform: translateY(-5px) scale(0.99); }
+  a.contact-item.reveal.in-view:active { transform: translateY(-4px) scale(0.99); }
+}
 
 /* ============================================
    RESPONSIVE
@@ -787,6 +806,20 @@ body.dark-theme .achievement-card {
 body.dark-theme .stat-card-accent { background: rgba(167, 139, 250, 0.08); }
 body.dark-theme .cert-card { border-style: dashed; }
 
+/* Hover shadow for dark mode — light mode's hover shadow (var(--shadow-lg))
+   is a faint purple that has almost no contrast on a dark background, so
+   here we pair a real black drop-shadow with a purple glow, same idea as
+   the visible "pop" you get in light mode against white. */
+body.dark-theme .hero-card:hover,
+body.dark-theme .stat-card:hover,
+body.dark-theme .project-card:hover,
+body.dark-theme .contact-item:hover,
+body.dark-theme .cert-card:hover,
+body.dark-theme .achievement-card:hover {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55), 0 0 42px rgba(167, 139, 250, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  border-color: rgba(167, 139, 250, 0.45);
+}
+
 body.dark-theme .btn-outline {
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(167, 139, 250, 0.35);
@@ -973,7 +1006,9 @@ body.dark-theme .space-decor { opacity: 1; visibility: visible; }
 }
 
 @media (max-width: 640px) {
-  .space-rocket, .space-planet { display: none; }
+  .space-rocket { font-size: 24px; bottom: 5%; left: 4%; }
+  .space-planet { width: 50px; height: 50px; top: 82px; right: 4%; }
+  .planet-ring { border-width: 2px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
