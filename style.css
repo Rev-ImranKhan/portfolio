@@ -426,17 +426,18 @@ a:focus-visible, button:focus-visible {
    ============================================ */
 .thumb-1 { background: linear-gradient(135deg, #4F46E5, #7C3AED); } /* 1. SINO - Tech */
 .thumb-2 { background: linear-gradient(135deg, #065F46, #059669); } /* 2. Nyay AI - Legal */
-.thumb-3 { background: linear-gradient(135deg, #14532D, #16A34A); } /* 3. FasalGuru - Agriculture */
-.thumb-12 { background: linear-gradient(135deg, #4C1D95, #8B5CF6); } /* 4. SachAI - Misinformation */
-.thumb-8 { background: linear-gradient(135deg, #064E3B, #10B981); } /* 5. Sarkari Yojana - Govt */
-.thumb-6 { background: linear-gradient(135deg, #1E3A8A, #2563EB); } /* 6. ShikshaBot - Education */
-.thumb-5 { background: linear-gradient(135deg, #9F1239, #E11D48); } /* 7. Hallucination - Alert */
-.thumb-7 { background: linear-gradient(135deg, #1E1B4B, #7C3AED); } /* 8. Ek Sawal, 4 Experts - Violet */
-.thumb-13 { background: linear-gradient(135deg, #0F172A, #3B82F6); } /* 9. BharatCommerce - Voice Shopping */
-.thumb-4 { background: linear-gradient(135deg, #78350F, #D97706); } /* 10. Kisan Briefing - Weather */
-.thumb-10 { background: linear-gradient(135deg, #1E293B, #475569); } /* 11. AI Resume - Professional */
-.thumb-11 { background: linear-gradient(135deg, #831843, #DB2777); } /* 12. Stock - Finance */
-.thumb-9 { background: linear-gradient(135deg, #0F766E, #14B8A6); } /* 13. KisanBazaar - Market */
+.thumb-3 { background: linear-gradient(135deg, #0E7490, #22D3EE); } /* 3. Smart Healthcare Ecosystem - Medical Cyan */
+.thumb-4 { background: linear-gradient(135deg, #14532D, #16A34A); } /* 4. FasalGuru - Agriculture */
+.thumb-5 { background: linear-gradient(135deg, #4C1D95, #8B5CF6); } /* 5. SachAI - Misinformation */
+.thumb-6 { background: linear-gradient(135deg, #064E3B, #10B981); } /* 6. Sarkari Yojana - Govt */
+.thumb-7 { background: linear-gradient(135deg, #1E3A8A, #2563EB); } /* 7. ShikshaBot - Education */
+.thumb-8 { background: linear-gradient(135deg, #9F1239, #E11D48); } /* 8. Hallucination - Alert */
+.thumb-9 { background: linear-gradient(135deg, #1E1B4B, #7C3AED); } /* 9. Ek Sawal, 4 Experts - Violet */
+.thumb-10 { background: linear-gradient(135deg, #0F172A, #3B82F6); } /* 10. BharatCommerce - Voice Shopping */
+.thumb-11 { background: linear-gradient(135deg, #78350F, #D97706); } /* 11. Kisan Briefing - Weather */
+.thumb-12 { background: linear-gradient(135deg, #1E293B, #475569); } /* 12. AI Resume - Professional */
+.thumb-13 { background: linear-gradient(135deg, #831843, #DB2777); } /* 13. Stock - Finance */
+.thumb-14 { background: linear-gradient(135deg, #0F766E, #14B8A6); } /* 14. KisanBazaar - Market */
 
 .project-body { padding: 26px 26px 10px; flex: 1; }
 .project-title { font-size: 19px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
