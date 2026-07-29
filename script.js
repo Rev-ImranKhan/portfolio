@@ -190,14 +190,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   toggle.addEventListener('click', () => panel.classList.toggle('open'));
 
-  // Auto-hint bubble (shows once, 3s after load, hides after 6s)
+  // Auto-hint bubble (shows every time page loads, hides after 10s)
   const hint = document.getElementById('aiChatHint');
-  if (hint && !localStorage.getItem('aiChatHintShown')) {
+  if (hint) {
     setTimeout(() => {
       hint.classList.add('show');
       setTimeout(() => hint.classList.remove('show'), 10000);
     }, 3000);
-    localStorage.setItem('aiChatHintShown', 'true');
   }
   toggle.addEventListener('click', () => hint && hint.classList.remove('show'));
 
