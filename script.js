@@ -189,6 +189,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   toggle.addEventListener('click', () => panel.classList.toggle('open'));
+
+  // Auto-hint bubble (shows once, 3s after load, hides after 6s)
+  const hint = document.getElementById('aiChatHint');
+  if (hint && !localStorage.getItem('aiChatHintShown')) {
+    setTimeout(() => {
+      hint.classList.add('show');
+      setTimeout(() => hint.classList.remove('show'), 6000);
+    }, 3000);
+    localStorage.setItem('aiChatHintShown', 'true');
+  }
+  toggle.addEventListener('click', () => hint && hint.classList.remove('show'));
+
   closeBtn.addEventListener('click', () => panel.classList.remove('open'));
 
   form.addEventListener('submit', async function (e) {

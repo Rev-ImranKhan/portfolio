@@ -1098,3 +1098,42 @@ body.dark-theme .ai-chat-panel {
   .ai-chat-toggle-label { display: none; }
   .ai-chat-panel { width: calc(100vw - 32px); }
 }
+
+/* ============================================================
+   AI CHAT — AUTO HINT BUBBLE
+   ============================================================ */
+.ai-chat-hint {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  background: var(--text-primary);
+  color: var(--bg, #fff);
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 12px;
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .4s var(--ease), transform .4s var(--ease), visibility .4s;
+  pointer-events: none;
+}
+.ai-chat-hint::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  border: 6px solid transparent;
+  border-top-color: var(--text-primary);
+}
+.ai-chat-hint.show { opacity: 1; visibility: visible; transform: translateY(0); }
+
+body.dark-theme .ai-chat-hint { background: #fff; color: #1a1a2e; }
+body.dark-theme .ai-chat-hint::after { border-top-color: #fff; }
+
+@media (max-width: 480px) {
+  .ai-chat-hint { font-size: 12px; padding: 8px 12px; }
+}
