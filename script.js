@@ -165,3 +165,63 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// ============================================================
+// AI CHAT WIDGET
+// ============================================================
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('aiChatToggle');
+  const panel = document.getElementById('aiChatPanel');
+  const closeBtn = document.getElementById('aiChatClose');
+  const form = document.getElementById('aiChatForm');
+  const input = document.getElementById('aiChatInput');
+  const messages = document.getElementById('aiChatMessages');
+
+  if (!toggle || !panel || !form) return;
+
+  function addMessage(text, sender) {
+    const msg = document.createElement('div');
+    msg.className = `ai-chat-msg ai-chat-msg-${sender}`;
+    msg.textContent = text;
+    messages.appendChild(msg);
+    messages.scrollTop = messages.scrollHeight;
+    return msg;
+  }
+
+  toggle.addEventListener('click', () => panel.classList.toggle('open'));
+  closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text) return;
+
+    addMessage(text, 'user');
+    input.value = '';
+    input.disabled = true;
+
+    const typingMsg = addMessage('Thinking...', 'typing');
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text })
+      });
+      const data = await res.json();
+      typingMsg.remove();
+
+      if (!res.ok || data.error) {
+        addMessage(data.error || "Something went wrong. Please email imrankhanedu601@gmail.com.", 'bot');
+      } else {
+        addMessage(data.reply, 'bot');
+      }
+    } catch (err) {
+      typingMsg.remove();
+      addMessage("Couldn't connect right now. Please email imrankhanedu601@gmail.com directly.", 'bot');
+    } finally {
+      input.disabled = false;
+      input.focus();
+    }
+  });
+});
