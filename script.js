@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (hint && !localStorage.getItem('aiChatHintShown')) {
     setTimeout(() => {
       hint.classList.add('show');
-      setTimeout(() => hint.classList.remove('show'), 6000);
+      setTimeout(() => hint.classList.remove('show'), 10000);
     }, 3000);
     localStorage.setItem('aiChatHintShown', 'true');
   }
