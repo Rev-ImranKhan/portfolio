@@ -803,6 +803,8 @@ body.dark-theme .achievement-card {
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   border: 1px solid rgba(167, 139, 250, 0.18);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transform: translateZ(0);        /* ← NAYA: apni GPU layer bana leta hai */
+  will-change: transform;          /* ← NAYA: browser ko pehle se warn karta hai */
 }
 body.dark-theme .stat-card-accent { background: rgba(167, 139, 250, 0.08); }
 body.dark-theme .cert-card { border-style: dashed; }
@@ -909,6 +911,7 @@ body.dark-theme .theme-toggle-label { color: var(--text-primary); }
   opacity: 0;
   visibility: hidden;
   transition: opacity .7s var(--ease);
+  contain: strict;                 /* ← NAYA: is layer ko poori tarah isolate karta hai */
 }
 body.dark-theme .space-decor { opacity: 1; visibility: visible; }
 
@@ -964,11 +967,15 @@ body.dark-theme .space-decor { opacity: 1; visibility: visible; }
   font-size: 38px;
   line-height: 1;
   filter: drop-shadow(0 0 14px rgba(167,139,250,.55));
-  animation: rocketFloat 7s ease-in-out infinite;
+  animation: rocketFloat 14s ease-in-out infinite;
 }
 @keyframes rocketFloat {
-  0%, 100% { transform: translateY(0) rotate(-8deg); }
-  50%      { transform: translateY(-26px) rotate(-14deg); }
+  0%   { transform: translate(0, 0) rotate(-8deg); }
+  20%  { transform: translate(24px, -34px) rotate(-16deg); }
+  40%  { transform: translate(-16px, -60px) rotate(-4deg); }
+  60%  { transform: translate(-32px, -20px) rotate(-18deg); }
+  80%  { transform: translate(14px, -8px) rotate(-6deg); }
+  100% { transform: translate(0, 0) rotate(-8deg); }
 }
 
 /* ---- rotating planet with ring ---- */
@@ -1136,4 +1143,60 @@ body.dark-theme .ai-chat-hint::after { border-top-color: #fff; }
 
 @media (max-width: 480px) {
   .ai-chat-hint { font-size: 12px; padding: 8px 12px; }
+}
+
+/* ============================================================
+   SPACE ASTRONAUT — hanging tether character
+   ============================================================ */
+.space-astronaut {
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 60px;
+  transform-origin: top center;
+  animation: astronautSwing 6s ease-in-out infinite;
+}
+.astronaut-tether {
+  width: 2px;
+  height: 150px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, rgba(167,139,250,0.6), rgba(167,139,250,0.15));
+}
+.astronaut-figure {
+  display: flex;
+  justify-content: center;
+  filter: drop-shadow(0 0 10px rgba(167,139,250,.4));
+}
+@keyframes astronautSwing {
+  0%, 100% { transform: rotate(-6deg); }
+  50%      { transform: rotate(6deg); }
+}
+.astronaut-greet {
+  position: absolute;
+  top: 190px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: #fff;
+  color: #1a1a2e;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s var(--ease), transform .4s var(--ease), visibility .4s;
+  pointer-events: none;
+}
+.astronaut-greet.show { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+@media (max-width: 640px) {
+  .space-astronaut { left: 4%; width: 44px; top: 0; }
+  .astronaut-tether { height: 120px; }
+  .astronaut-figure svg { width: 38px; height: 58px; }
+  .astronaut-greet { font-size: 11px; padding: 6px 10px; top: 158px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .space-astronaut { animation: none; }
 }

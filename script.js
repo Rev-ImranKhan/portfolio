@@ -107,6 +107,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (toggleBtn) toggleBtn.setAttribute('aria-checked', String(isDark));
   }
 
+  function showAstronautGreet() {
+    const greet = document.getElementById('astronautGreet');
+    if (!greet) return;
+    greet.classList.add('show');
+    setTimeout(() => greet.classList.remove('show'), 5000);
+  }
+
   function buildSpaceScene() {
     if (sceneBuilt || !starsContainer) return;
     sceneBuilt = true;
@@ -152,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const startedDark = document.body.classList.contains('dark-theme');
-  if (startedDark) buildSpaceScene();
+  if (startedDark) { buildSpaceScene(); setTimeout(showAstronautGreet, 1200); }
   setLabel(startedDark);
 
   if (toggleBtn) {
@@ -161,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const isDark = document.body.classList.contains('dark-theme');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
       setLabel(isDark);
-      if (isDark) buildSpaceScene();
+      if (isDark) { buildSpaceScene(); showAstronautGreet(); }
     });
   }
 });
