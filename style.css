@@ -1213,5 +1213,5 @@ body.dark-theme .ai-chat-hint::after { border-top-color: #fff; }
    the hero card so the astronaut has clearer space, without
    pushing it down as much as on mobile. Light mode untouched. */
 @media (min-width: 641px) {
-  body.dark-theme .hero { padding-top: 210px; }
+  body.dark-theme .hero { padding-top: 240px; }
 }
