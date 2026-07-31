@@ -1200,3 +1200,11 @@ body.dark-theme .ai-chat-hint::after { border-top-color: #fff; }
 @media (prefers-reduced-motion: reduce) {
   .space-astronaut { animation: none; }
 }
+
+/* Mobile dark mode only: push hero card down so the astronaut
+   (which sits right at the top, left:4%) has clear space above
+   the card instead of being hidden behind it. Light mode and
+   desktop are untouched. */
+@media (max-width: 640px) {
+  body.dark-theme .hero { padding-top: 210px; }
+}
